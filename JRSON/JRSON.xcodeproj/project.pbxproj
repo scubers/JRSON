@@ -1,0 +1,577 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		091DF2751E0BADDC00FA5D18 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 091DF2741E0BADDC00FA5D18 /* main.m */; };
+		091DF2781E0BADDC00FA5D18 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 091DF2771E0BADDC00FA5D18 /* AppDelegate.m */; };
+		091DF2831E0BADDC00FA5D18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091DF2811E0BADDC00FA5D18 /* LaunchScreen.storyboard */; };
+		091DF28E1E0BADDC00FA5D18 /* JRSONTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 091DF28D1E0BADDC00FA5D18 /* JRSONTests.m */; };
+		098BA2AB1E0D12510068F7F6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 098BA2A41E0D12510068F7F6 /* Localizable.strings */; };
+		098BA2AC1E0D12510068F7F6 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 098BA2A61E0D12510068F7F6 /* Media.xcassets */; };
+		9CC8170A3722BC1A09E6D493 /* Pods_JRSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2324AB9BCBAEE9B6560D1874 /* Pods_JRSON.framework */; };
+		A899ACA71E8928AD0046CDA8 /* JRSON.m in Sources */ = {isa = PBXBuildFile; fileRef = A899ACA11E8928AD0046CDA8 /* JRSON.m */; };
+		A899ACA81E8928AD0046CDA8 /* JRSONDefaultFormater.m in Sources */ = {isa = PBXBuildFile; fileRef = A899ACA31E8928AD0046CDA8 /* JRSONDefaultFormater.m */; };
+		A899ACA91E8928AD0046CDA8 /* JRSONDefaultImplementations.m in Sources */ = {isa = PBXBuildFile; fileRef = A899ACA51E8928AD0046CDA8 /* JRSONDefaultImplementations.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		091DF28A1E0BADDC00FA5D18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 091DF2681E0BADDC00FA5D18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 091DF26F1E0BADDC00FA5D18;
+			remoteInfo = JRSON;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		091DF2701E0BADDC00FA5D18 /* JRSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JRSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		091DF2741E0BADDC00FA5D18 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		091DF2761E0BADDC00FA5D18 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		091DF2771E0BADDC00FA5D18 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		091DF2821E0BADDC00FA5D18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		091DF2841E0BADDC00FA5D18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		091DF2891E0BADDC00FA5D18 /* JRSONTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JRSONTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		091DF28D1E0BADDC00FA5D18 /* JRSONTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JRSONTests.m; sourceTree = "<group>"; };
+		091DF28F1E0BADDC00FA5D18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0988B9711E0BD95500AFD735 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		0988B9731E0BD95900AFD735 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		0988B9751E0BD95F00AFD735 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		0988B9771E0BD96500AFD735 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		098BA2A51E0D12510068F7F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		098BA2A61E0D12510068F7F6 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		098BA2A71E0D12510068F7F6 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
+		098BA2A81E0D12510068F7F6 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		098BA2A91E0D12510068F7F6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		098BA2AA1E0D12510068F7F6 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		2324AB9BCBAEE9B6560D1874 /* Pods_JRSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JRSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A899ACA01E8928AD0046CDA8 /* JRSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSON.h; sourceTree = "<group>"; };
+		A899ACA11E8928AD0046CDA8 /* JRSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSON.m; sourceTree = "<group>"; };
+		A899ACA21E8928AD0046CDA8 /* JRSONDefaultFormater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSONDefaultFormater.h; sourceTree = "<group>"; };
+		A899ACA31E8928AD0046CDA8 /* JRSONDefaultFormater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSONDefaultFormater.m; sourceTree = "<group>"; };
+		A899ACA41E8928AD0046CDA8 /* JRSONDefaultImplementations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSONDefaultImplementations.h; sourceTree = "<group>"; };
+		A899ACA51E8928AD0046CDA8 /* JRSONDefaultImplementations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSONDefaultImplementations.m; sourceTree = "<group>"; };
+		A899ACA61E8928AD0046CDA8 /* JRSONProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSONProtocols.h; sourceTree = "<group>"; };
+		AFDE3945ED4D11152F652F81 /* Pods-JRSON.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JRSON.debug.xcconfig"; path = "../../../../Pods/Target Support Files/Pods-JRSON/Pods-JRSON.debug.xcconfig"; sourceTree = "<group>"; };
+		CEAE18FB1D0E8B487D0ED2AC /* Pods-JRSON.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JRSON.release.xcconfig"; path = "../../../../Pods/Target Support Files/Pods-JRSON/Pods-JRSON.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		091DF26D1E0BADDC00FA5D18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CC8170A3722BC1A09E6D493 /* Pods_JRSON.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		091DF2861E0BADDC00FA5D18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		091DF2671E0BADDC00FA5D18 = {
+			isa = PBXGroup;
+			children = (
+				098BA29F1E0D12510068F7F6 /* Classes */,
+				098BA2AD1E0D126F0068F7F6 /* Something_you_do_not_use */,
+				D35D0013CD430E4EB9E3AE11 /* Pods */,
+				8DED0CB9C2902B2CC6633658 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		091DF2711E0BADDC00FA5D18 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				091DF2701E0BADDC00FA5D18 /* JRSON.app */,
+				091DF2891E0BADDC00FA5D18 /* JRSONTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		091DF2721E0BADDC00FA5D18 /* JRSON */ = {
+			isa = PBXGroup;
+			children = (
+				091DF2761E0BADDC00FA5D18 /* AppDelegate.h */,
+				091DF2771E0BADDC00FA5D18 /* AppDelegate.m */,
+				091DF2811E0BADDC00FA5D18 /* LaunchScreen.storyboard */,
+				091DF2841E0BADDC00FA5D18 /* Info.plist */,
+				091DF2731E0BADDC00FA5D18 /* Supporting Files */,
+			);
+			path = JRSON;
+			sourceTree = "<group>";
+		};
+		091DF2731E0BADDC00FA5D18 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				091DF2741E0BADDC00FA5D18 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		091DF28C1E0BADDC00FA5D18 /* JRSONTests */ = {
+			isa = PBXGroup;
+			children = (
+				091DF28D1E0BADDC00FA5D18 /* JRSONTests.m */,
+				091DF28F1E0BADDC00FA5D18 /* Info.plist */,
+			);
+			path = JRSONTests;
+			sourceTree = "<group>";
+		};
+		098BA29F1E0D12510068F7F6 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A899ACA01E8928AD0046CDA8 /* JRSON.h */,
+				A899ACA11E8928AD0046CDA8 /* JRSON.m */,
+				A899ACA21E8928AD0046CDA8 /* JRSONDefaultFormater.h */,
+				A899ACA31E8928AD0046CDA8 /* JRSONDefaultFormater.m */,
+				A899ACA41E8928AD0046CDA8 /* JRSONDefaultImplementations.h */,
+				A899ACA51E8928AD0046CDA8 /* JRSONDefaultImplementations.m */,
+				A899ACA61E8928AD0046CDA8 /* JRSONProtocols.h */,
+				098BA2A31E0D12510068F7F6 /* resource */,
+			);
+			name = Classes;
+			path = ../Classes;
+			sourceTree = "<group>";
+		};
+		098BA2A31E0D12510068F7F6 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				098BA2A41E0D12510068F7F6 /* Localizable.strings */,
+				098BA2A61E0D12510068F7F6 /* Media.xcassets */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
+		098BA2AD1E0D126F0068F7F6 /* Something_you_do_not_use */ = {
+			isa = PBXGroup;
+			children = (
+				091DF28C1E0BADDC00FA5D18 /* JRSONTests */,
+				091DF2711E0BADDC00FA5D18 /* Products */,
+				091DF2721E0BADDC00FA5D18 /* JRSON */,
+			);
+			name = Something_you_do_not_use;
+			sourceTree = "<group>";
+		};
+		8DED0CB9C2902B2CC6633658 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2324AB9BCBAEE9B6560D1874 /* Pods_JRSON.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D35D0013CD430E4EB9E3AE11 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AFDE3945ED4D11152F652F81 /* Pods-JRSON.debug.xcconfig */,
+				CEAE18FB1D0E8B487D0ED2AC /* Pods-JRSON.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		091DF26F1E0BADDC00FA5D18 /* JRSON */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 091DF2921E0BADDC00FA5D18 /* Build configuration list for PBXNativeTarget "JRSON" */;
+			buildPhases = (
+				76CECD0802158BC216B0B05C /* [CP] Check Pods Manifest.lock */,
+				091DF26C1E0BADDC00FA5D18 /* Sources */,
+				091DF26D1E0BADDC00FA5D18 /* Frameworks */,
+				091DF26E1E0BADDC00FA5D18 /* Resources */,
+				7F5EACE756D1C3845C4E19B2 /* [CP] Embed Pods Frameworks */,
+				C37BAF50F35D1FC5D3831BED /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JRSON;
+			productName = JRSON;
+			productReference = 091DF2701E0BADDC00FA5D18 /* JRSON.app */;
+			productType = "com.apple.product-type.application";
+		};
+		091DF2881E0BADDC00FA5D18 /* JRSONTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 091DF2951E0BADDC00FA5D18 /* Build configuration list for PBXNativeTarget "JRSONTests" */;
+			buildPhases = (
+				091DF2851E0BADDC00FA5D18 /* Sources */,
+				091DF2861E0BADDC00FA5D18 /* Frameworks */,
+				091DF2871E0BADDC00FA5D18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				091DF28B1E0BADDC00FA5D18 /* PBXTargetDependency */,
+			);
+			name = JRSONTests;
+			productName = JRSONTests;
+			productReference = 091DF2891E0BADDC00FA5D18 /* JRSONTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		091DF2681E0BADDC00FA5D18 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = J;
+				TargetAttributes = {
+					091DF26F1E0BADDC00FA5D18 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 462J8VB29Y;
+						ProvisioningStyle = Automatic;
+					};
+					091DF2881E0BADDC00FA5D18 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 462J8VB29Y;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 091DF26F1E0BADDC00FA5D18;
+					};
+				};
+			};
+			buildConfigurationList = 091DF26B1E0BADDC00FA5D18 /* Build configuration list for PBXProject "JRSON" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+				"zh-Hant",
+				vi,
+				th,
+			);
+			mainGroup = 091DF2671E0BADDC00FA5D18;
+			productRefGroup = 091DF2711E0BADDC00FA5D18 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				091DF26F1E0BADDC00FA5D18 /* JRSON */,
+				091DF2881E0BADDC00FA5D18 /* JRSONTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		091DF26E1E0BADDC00FA5D18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				091DF2831E0BADDC00FA5D18 /* LaunchScreen.storyboard in Resources */,
+				098BA2AC1E0D12510068F7F6 /* Media.xcassets in Resources */,
+				098BA2AB1E0D12510068F7F6 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		091DF2871E0BADDC00FA5D18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		76CECD0802158BC216B0B05C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7F5EACE756D1C3845C4E19B2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../../../../Pods/Target Support Files/Pods-JRSON/Pods-JRSON-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C37BAF50F35D1FC5D3831BED /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../../../../Pods/Target Support Files/Pods-JRSON/Pods-JRSON-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		091DF26C1E0BADDC00FA5D18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A899ACA71E8928AD0046CDA8 /* JRSON.m in Sources */,
+				A899ACA91E8928AD0046CDA8 /* JRSONDefaultImplementations.m in Sources */,
+				091DF2781E0BADDC00FA5D18 /* AppDelegate.m in Sources */,
+				A899ACA81E8928AD0046CDA8 /* JRSONDefaultFormater.m in Sources */,
+				091DF2751E0BADDC00FA5D18 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		091DF2851E0BADDC00FA5D18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				091DF28E1E0BADDC00FA5D18 /* JRSONTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		091DF28B1E0BADDC00FA5D18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 091DF26F1E0BADDC00FA5D18 /* JRSON */;
+			targetProxy = 091DF28A1E0BADDC00FA5D18 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		091DF2811E0BADDC00FA5D18 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				091DF2821E0BADDC00FA5D18 /* Base */,
+				0988B9711E0BD95500AFD735 /* zh-Hans */,
+				0988B9731E0BD95900AFD735 /* zh-Hant */,
+				0988B9751E0BD95F00AFD735 /* vi */,
+				0988B9771E0BD96500AFD735 /* th */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		098BA2A41E0D12510068F7F6 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				098BA2A51E0D12510068F7F6 /* en */,
+				098BA2A71E0D12510068F7F6 /* th */,
+				098BA2A81E0D12510068F7F6 /* vi */,
+				098BA2A91E0D12510068F7F6 /* zh-Hans */,
+				098BA2AA1E0D12510068F7F6 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		091DF2901E0BADDC00FA5D18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		091DF2911E0BADDC00FA5D18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		091DF2931E0BADDC00FA5D18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFDE3945ED4D11152F652F81 /* Pods-JRSON.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				DEVELOPMENT_TEAM = 462J8VB29Y;
+				INFOPLIST_FILE = JRSON/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.JRSON;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		091DF2941E0BADDC00FA5D18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEAE18FB1D0E8B487D0ED2AC /* Pods-JRSON.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
+				DEVELOPMENT_TEAM = 462J8VB29Y;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				INFOPLIST_FILE = JRSON/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.JRSON;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		091DF2961E0BADDC00FA5D18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 462J8VB29Y;
+				INFOPLIST_FILE = JRSONTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.JRSONTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JRSON.app/JRSON";
+			};
+			name = Debug;
+		};
+		091DF2971E0BADDC00FA5D18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 462J8VB29Y;
+				INFOPLIST_FILE = JRSONTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.JRSONTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JRSON.app/JRSON";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		091DF26B1E0BADDC00FA5D18 /* Build configuration list for PBXProject "JRSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				091DF2901E0BADDC00FA5D18 /* Debug */,
+				091DF2911E0BADDC00FA5D18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		091DF2921E0BADDC00FA5D18 /* Build configuration list for PBXNativeTarget "JRSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				091DF2931E0BADDC00FA5D18 /* Debug */,
+				091DF2941E0BADDC00FA5D18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		091DF2951E0BADDC00FA5D18 /* Build configuration list for PBXNativeTarget "JRSONTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				091DF2961E0BADDC00FA5D18 /* Debug */,
+				091DF2971E0BADDC00FA5D18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 091DF2681E0BADDC00FA5D18 /* Project object */;
+}
