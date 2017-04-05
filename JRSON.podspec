@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
     s.author = { 'author' => 'HHLY' }
     s.ios.deployment_target = '8.0'
 
-    s.source = { :git => 'git@192.168.10.44:wangjr/JRSON.git' }
+    s.source = { :git => 'https://github.com/scubers/JRSON.git', :tag => s.version }
 
 
 
