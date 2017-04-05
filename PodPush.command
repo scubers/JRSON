@@ -20,7 +20,7 @@ read thisTag
 
 # 获取podspec文件名
 podSpecName=`ls|grep ".podspec$"|sed "s/\.podspec//g"`
-echo $podSpecName
+echo ———$podSpecName
 
 # 修改版本号
 sed -i "" "s/s.version *= *[\"\'][^\"]*[\"\']/s.version=\"$thisTag\"/g" $podSpecName.podspec
