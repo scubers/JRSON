@@ -3,9 +3,9 @@ Pod::Spec.new do |s|
     s.name = 'JRSON' 
     s.version="1.0.0"
     s.summary = 'summary'
-    s.homepage = 'http://www.13322.com'
+    s.homepage = 'http://www.jrwong.com'
     s.license = { :type => 'MIT', :file => 'LICENSE' }
-    s.author = { 'author' => 'HHLY' }
+    s.author = { 'author' => 'Jrwong' }
     s.ios.deployment_target = '8.0'
 
     s.source = { :git => 'https://github.com/scubers/JRSON.git', :tag => s.version }
