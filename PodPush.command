@@ -26,7 +26,7 @@ echo $podSpecName
 sed -i "" "s/s.version *= *[\"\'][^\"]*[\"\']/s.version=\"$thisTag\"/g" $podSpecName.podspec
 
 
-pod lib lint
+pod lib lint —-allow-warnings
 
 
 # 验证失败退出
@@ -34,10 +34,13 @@ if [ $? != 0 ];then
     exit 1
 fi
 
+
+
+
 git commit $podSpecName.podspec -m "update podspec"
 git push
 git tag -m "update podspec" $thisTag
 git push --tags
 
 # pod repo push PrivatePods --sources=$sources
-pod repo push pods-repo $podSpecName.podspec --allow-warnings
+pod trunk push $podSpecName.podspec —-allow-warnings
