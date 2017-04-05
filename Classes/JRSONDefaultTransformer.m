@@ -1,12 +1,12 @@
 //
-//  JRSONDefaultFormater.m
+//  JRSONDefaultTransformer.m
 //  JRSON
 //
 //  Created by 王俊仁 on 2017/3/24.
 //  Copyright © 2017年 jrwong. All rights reserved.
 //
 
-#import "JRSONDefaultFormater.h"
+#import "JRSONDefaultTransformer.h"
 #import "JRSON.h"
 #import <objc/runtime.h>
 #import "JRSONDefaultImplementations.h"
@@ -32,7 +32,7 @@ static BOOL jrsn_checkSubInherit(Class subClass, Class targetSuperClass) {
  - NSDate 以及子类
  - NSURL 以及子类
  */
-@implementation JRSONDefaultFormater
+@implementation JRSONDefaultTransformer
 
 - (BOOL)jrsn_canHandleWithClass:(Class)aClass {
     return
@@ -52,7 +52,7 @@ static BOOL jrsn_checkSubInherit(Class subClass, Class targetSuperClass) {
     if (object_isClass(obj)) return nil;
 
     if ([obj isKindOfClass:[NSString class]]) {
-        return [NSString stringWithFormat:@"\"%@\"", obj];
+        return [NSString stringWithFormat:@"\"%@\"", [self _jrsn_serializeString:obj]];
     }
     else if ([obj isKindOfClass:[NSNumber class]]) {
         return [NSString stringWithFormat:@"%@", obj];
@@ -65,63 +65,20 @@ static BOOL jrsn_checkSubInherit(Class subClass, Class targetSuperClass) {
     }
     else if ([obj isKindOfClass:[NSArray class]]) {
         return [self _jrsn_serializeArray:obj];
-//        NSArray *array = obj;
-//        NSMutableString *json = [NSMutableString stringWithFormat:@"["];
-//        [array enumerateObjectsUsingBlock:^(id  _Nonnull subObj, NSUInteger idx, BOOL * _Nonnull stop) {
-//            NSString *subjson = [JRSON parseObjToJSON:subObj];
-//            if (subjson) {
-//                [json appendFormat:@"%@,", subjson];
-//            }
-//        }];
-//        if ([json hasSuffix:@","]) {
-//            [json replaceCharactersInRange:NSMakeRange(json.length-1, 1) withString:@""];
-//        }
-//        [json appendString:@"]"];
-//        return json;
     }
     else if ([obj isKindOfClass:[NSDictionary class]]) {
         return [self _jrsn_serializeDictionary:obj];
-//        NSDictionary *dict = (NSDictionary *)obj;
-//        NSMutableString *json = [NSMutableString stringWithFormat:@"{"];
-//        [dict enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull subObj, BOOL * _Nonnull stop) {
-//            NSString *subjsong = [JRSON parseObjToJSON:subObj];
-//            if (subjsong) {
-//                [json appendFormat:@"\"%@\":%@,", [key description], subjsong];
-//            }
-//        }];
-//        if ([json hasSuffix:@","]) {
-//            [json replaceCharactersInRange:NSMakeRange(json.length-1, 1) withString:@""];
-//        }
-//        [json appendString:@"}"];
-//        return json;
-    } else if ([obj conformsToProtocol:@protocol(JRSON)]) {
+    }
+    else if ([obj conformsToProtocol:@protocol(JRSON)]) {
         return [self _jrsn_serializeJRSONObj:obj];
-//        NSMutableString *json = [NSMutableString stringWithFormat:@"{"];
-//
-//        unsigned int outCount = 0;
-//        objc_property_t *props = class_copyPropertyList([obj class], &outCount);
-//        for (int i = 0 ; i < outCount; i ++) {
-//            NSString *name = [NSString stringWithUTF8String:property_getName(props[i])];
-//            if ([self keyShouldBeIgnore:name]) continue;
-//
-//            id value = [obj valueForKey:name];
-//            if ([self objShouldBeIgnore:value]) continue;
-//
-//            NSString *subjson = [JRSON parseObjToJSON:value];
-//            if (subjson) {
-//                [json appendFormat:@"\"%@\":%@,", name, subjson];
-//            }
-//        }
-//        free(props);
-//        if ([json hasSuffix:@","]) {
-//            [json replaceCharactersInRange:NSMakeRange(json.length-1, 1) withString:@""];
-//        }
-//        [json appendString:@"}"];
-//        
-//        return json;
     }
     
     return nil;
+}
+
+- (NSString *)_jrsn_serializeString:(NSString *)aString {
+    return [[aString stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"]
+            stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
 }
 
 - (NSString *)_jrsn_serializeArray:(NSArray *)array {
@@ -226,6 +183,7 @@ static BOOL jrsn_checkSubInherit(Class subClass, Class targetSuperClass) {
 
     return [self _jrsn_deserializeJson:json withClass:aClass dictExtraClass:nil];
 }
+
 
 - (id<JRSON>)_jrsn_deserializeJson:(id<JRSONValuable>)json withClass:(Class<JRSON>)aClass dictExtraClass:(Class)extraClass {
 

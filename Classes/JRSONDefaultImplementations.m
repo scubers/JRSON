@@ -7,6 +7,7 @@
 //
 
 #import "JRSONDefaultImplementations.h"
+#import "JRSON.h"
 
 @interface NSObject (JRSONDefaultImplementation)
 
@@ -20,6 +21,10 @@
 
 + (NSDictionary<NSString *, Class<JRSON>> *)jrsn_dictPropertiesClassMap {
     return nil;
+}
+
+- (NSString *)jrsn_jsonString {
+    return [JRSON parseObjToJSON:(id<JRSON>)self];
 }
 
 @end

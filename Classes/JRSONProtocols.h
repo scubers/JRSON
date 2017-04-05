@@ -17,6 +17,7 @@
 
 + (NSDictionary<NSString *, Class<JRSON>> *)jrsn_dictPropertiesClassMap;
 
+- (NSString *)jrsn_jsonString;
 
 @end
 

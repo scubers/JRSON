@@ -8,7 +8,7 @@
 
 #import "JRSON.h"
 #import <objc/runtime.h>
-#import "JRSONDefaultFormater.h"
+#import "JRSONDefaultTransformer.h"
 
 @interface JRSON ()
 
@@ -37,7 +37,7 @@ static id __instance;
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _defaultTransformer = [JRSONDefaultFormater new];
+        _defaultTransformer = [JRSONDefaultTransformer new];
     }
     return self;
 }
@@ -89,20 +89,7 @@ static id __instance;
     self.transformers[NSStringFromClass(aClass)] = transformer;
 }
 
-#pragma mark private
-
-- (BOOL)keyShouldBeIgnore:(NSString *)key {
-    return
-    [key isEqualToString:@"hash"]
-    ||[key isEqualToString:@"description"]
-    ||[key isEqualToString:@"debugDescription"]
-    ;
-}
-
-- (BOOL)objShouldBeIgnore:(id)obj {
-    BOOL flag1 = object_isClass(obj);
-    return flag1;
-}
+#pragma mark getter setter
 
 - (NSMutableDictionary<NSString *, id<JRSONTransformer>> *)transformers {
     if (!_transformers) {

@@ -1,5 +1,5 @@
 //
-//  JRSONDefaultFormater.h
+//  JRSONDefaultTransformer.h
 //  JRSON
 //
 //  Created by 王俊仁 on 2017/3/24.
@@ -19,6 +19,6 @@
  - NSDate 以及子类
  - NSURL 以及子类
  */
-@interface JRSONDefaultFormater : NSObject <JRSONTransformer>
+@interface JRSONDefaultTransformer : NSObject <JRSONTransformer>
 
 @end

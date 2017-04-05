@@ -8,6 +8,10 @@
 
 #import <XCTest/XCTest.h>
 
+#import "JRSON.h"
+#import "Animal.h"
+
+
 @interface JRSONTests : XCTestCase
 
 @end
@@ -25,6 +29,14 @@
 }
 
 - (void)testExample {
+    Person *p = [Person new];
+    NSString *json = [JRSON parseObjToJSON:p];
+    NSLog(@"%@", json);
+    p.json = json;
+    json = [JRSON parseObjToJSON:p];
+
+    NSLog(@"==========");
+    NSLog(@"%@", json);
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
