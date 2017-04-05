@@ -26,7 +26,7 @@ echo ———$podSpecName
 sed -i "" "s/s.version *= *[\"\'][^\"]*[\"\']/s.version=\"$thisTag\"/g" $podSpecName.podspec
 
 
-pod lib lint —-allow-warnings
+pod lib lint
 
 
 # 验证失败退出
