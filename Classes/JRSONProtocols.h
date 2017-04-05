@@ -17,7 +17,22 @@
 
 + (NSDictionary<NSString *, Class<JRSON>> *)jrsn_dictPropertiesClassMap;
 
+
+/**
+ 将对象转化成json
+
+ @return return value description
+ */
 - (NSString *)jrsn_jsonString;
+
+
+/**
+ 返回id<JRSON> 或者 NSArray<id<JRSON>>
+
+ @param json json description
+ @return return value description
+ */
++ (id)jrsn_objectFromJSON:(NSString *)json;
 
 @end
 

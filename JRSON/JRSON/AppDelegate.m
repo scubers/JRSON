@@ -10,6 +10,7 @@
 #import "JRSON.h"
 #import "Animal.h"
 #import "JRSONDefaultImplementations.h"
+#import "JRSONPropertyAnalyzing.h"
 
 
 @interface AppDelegate ()
@@ -20,6 +21,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     Person *p = [Person new];
+    [p setup];
     NSString *json = [JRSON parseObjToJSON:p];
     NSLog(@"%@", json);
     p.json = json;
@@ -29,8 +31,12 @@
     NSLog(@"%@", json);
     Person *pp = [JRSON formatJSON:json withClass:[Person class]];
     NSLog(@"%@", pp);
+
     Person *ppp = [JRSON formatJSON:pp.json withClass:[Person class]];
     NSLog(@"%@", ppp);
+    
+    NSArray *a = [[JRSONPropertyAnalyzing shared] analyzeClass:[Person class]];
+
     return YES;
 }
 

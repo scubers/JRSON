@@ -27,6 +27,10 @@
     return [JRSON parseObjToJSON:(id<JRSON>)self];
 }
 
++ (id)jrsn_objectFromJSON:(NSString *)json {
+    return [JRSON formatJSON:json withClass:self];
+}
+
 @end
 
 

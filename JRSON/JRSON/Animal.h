@@ -21,12 +21,23 @@
 @property (nonatomic, strong) NSArray<Dog *> *dogs;
 @property (nonatomic, strong) NSDictionary<NSString *, Dog *> *nameDogs;
 @property (nonatomic, strong) NSString *json;
+
+@property (nonatomic, strong) NSArray *strings;
+@property (nonatomic, strong) NSDictionary *dicts;
+
+@property (nonatomic, strong) NSArray *strangeArray;
+@property (nonatomic, strong) NSDictionary *strangeDict;
+
+
+- (instancetype)setup;
+
 @end
 
 @interface Dog : NSObject <JRSON>
 
 @property (nonatomic, strong) NSString *name;
 
+- (instancetype)setup;
 
 @end
 
