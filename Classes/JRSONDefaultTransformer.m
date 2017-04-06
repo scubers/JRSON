@@ -81,8 +81,11 @@
 }
 
 - (NSString *)_jrsn_serializeString:(NSString *)aString {
-    return [[aString stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"]
-            stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
+    return [[[[aString stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"]
+            stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""]
+            stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"]
+            stringByReplacingOccurrencesOfString:@"\t" withString:@"\\t"]
+    ;
 }
 
 - (NSString *)_jrsn_serializeArray:(NSArray *)array {

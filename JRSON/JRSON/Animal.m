@@ -37,7 +37,7 @@
 
 
 - (instancetype)setup {
-    _name = @"jac\\k\"";
+    _name = @"ja\nc\\k\"------\t";
     _age = 10;
     _isMale = YES;
     _birthday = [NSDate date];
