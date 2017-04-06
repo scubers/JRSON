@@ -31,6 +31,24 @@
     return [JRSON formatJSON:json withClass:self];
 }
 
+- (instancetype)jrsn_copy {
+    NSAssert([self conformsToProtocol:@protocol(JRSON)], @"对象[%@], 未实现 protocol <JRSON>", self);
+    if ([self isKindOfClass:[NSArray class]]) {
+
+        NSMutableArray *newArray = [NSMutableArray array];
+        [((NSArray *)self) enumerateObjectsUsingBlock:^(id<JRSON>  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [newArray addObject:[obj jrsn_copy]];
+        }];
+
+        if ([self isKindOfClass:[NSMutableArray class]]) {
+            return newArray;
+        }
+        return [newArray copy];
+    }
+    return [JRSON formatJSON:[JRSON parseObjToJSON:(id<JRSON>)self] withClass:self.class];
+
+}
+
 @end
 
 

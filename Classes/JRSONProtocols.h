@@ -34,6 +34,14 @@
  */
 + (id)jrsn_objectFromJSON:(NSString *)json;
 
+
+/**
+ 使用json的序列化和反序列化进行进行对象深copy
+
+ @return return value description
+ */
+- (instancetype)jrsn_copy;
+
 @end
 
 ////////////////////////////////////////////////////////////////////////
