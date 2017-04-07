@@ -32,6 +32,7 @@
 }
 
 - (instancetype)jrsn_copy {
+    NSAssert(![self isKindOfClass:[NSDictionary class]], @"- jrsn_copy 不支持字典", self);
     NSAssert([self conformsToProtocol:@protocol(JRSON)], @"对象[%@], 未实现 protocol <JRSON>", self);
     if ([self isKindOfClass:[NSArray class]]) {
 
