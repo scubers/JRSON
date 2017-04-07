@@ -114,7 +114,7 @@ static id __instance;
         }
         else if (class_conformsToProtocol(aClass, @protocol(JRSON))) {
             propertyInfo.type = JRSONPropertyTypeJRSONObj;
-            propertyInfo.subInfos = [self analyzeClass:propClass];
+//            propertyInfo.subInfos = [self analyzeClass:propClass];
         }
         else {
             continue;
