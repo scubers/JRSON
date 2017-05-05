@@ -22,6 +22,8 @@
 @property (nonatomic, strong) NSDictionary<NSString *, Dog *> *nameDogs;
 @property (nonatomic, strong) NSString *json;
 
+@property (nonatomic, strong, readonly) NSString *notKVO;
+
 @property (nonatomic, strong) NSArray *strings;
 @property (nonatomic, strong) NSDictionary *dicts;
 

@@ -35,7 +35,6 @@
              };
 }
 
-
 - (instancetype)setup {
     _name = @"ja\nc\\k\"------\t";
     _age = 10;
@@ -98,6 +97,10 @@
                              },
                      };
     return self;
+}
+
+- (NSString *)notKVO {
+    return @"";
 }
 
 @end

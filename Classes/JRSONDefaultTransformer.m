@@ -241,27 +241,34 @@
 
                 if (subValue) {
 
-                    switch (obj.type) {
-                        case JRSONPropertyTypeArray:
-                        {
-                            if (obj.arrayClass) {
-                                [targetObj setValue:[self _jrsn_deserializeJson:subValue withClass:obj.arrayClass dictExtraClass:nil] forKey:obj.name];
+                    @try {
+                        switch (obj.type) {
+                            case JRSONPropertyTypeArray:
+                            {
+                                if (obj.arrayClass) {
+                                    [targetObj setValue:[self _jrsn_deserializeJson:subValue withClass:obj.arrayClass dictExtraClass:nil] forKey:obj.name];
+                                }
+                                break;
                             }
-                            break;
-                        }
-                        case JRSONPropertyTypeDictionary:
-                        {
-                            if (obj.dictClass) {
-                                [targetObj setValue:[self _jrsn_deserializeJson:subValue withClass:obj.targetClass dictExtraClass:obj.dictClass] forKey:obj.name];
+                            case JRSONPropertyTypeDictionary:
+                            {
+                                if (obj.dictClass) {
+                                    [targetObj setValue:[self _jrsn_deserializeJson:subValue withClass:obj.targetClass dictExtraClass:obj.dictClass] forKey:obj.name];
+                                }
+                                break;
                             }
-                            break;
+                            default:
+                            {
+                                [targetObj setValue:[self _jrsn_deserializeJson:subValue withClass:obj.targetClass dictExtraClass:nil] forKey:obj.name];
+                                break;
+                            }
                         }
-                        default:
-                        {
-                            [targetObj setValue:[self _jrsn_deserializeJson:subValue withClass:obj.targetClass dictExtraClass:nil] forKey:obj.name];
-                            break;
-                        }
+                    } @catch (NSException *exception) {
+                        NSLog(@"%@", exception);
+                    } @finally {
+
                     }
+
                 }
 
             }];
