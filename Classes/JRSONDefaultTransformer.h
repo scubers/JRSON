@@ -18,6 +18,7 @@
  - NSDictionary 以及子类
  - NSDate 以及子类
  - NSURL 以及子类
+ - NSData 以及子类
  */
 @interface JRSONDefaultTransformer : NSObject <JRSONTransformer>
 

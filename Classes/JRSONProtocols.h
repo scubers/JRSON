@@ -13,6 +13,8 @@
 
 @optional
 
++ (NSArray<NSString *> *)jrsn_ignoreProperties;
+
 + (NSDictionary<NSString *, Class<JRSON>> *)jrsn_arrayPropertiesClassMap;
 
 + (NSDictionary<NSString *, Class<JRSON>> *)jrsn_dictPropertiesClassMap;

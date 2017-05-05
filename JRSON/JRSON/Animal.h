@@ -24,6 +24,8 @@
 
 @property (nonatomic, strong, readonly) NSString *notKVO;
 
+@property (nonatomic, strong) NSData *data;
+
 @property (nonatomic, strong) NSArray *strings;
 @property (nonatomic, strong) NSDictionary *dicts;
 

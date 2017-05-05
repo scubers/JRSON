@@ -51,14 +51,21 @@ static id __instance;
 
     NSMutableArray *info = [NSMutableArray array];
 
+    NSArray<NSString *> *ignoreProperties = [aClass jrsn_ignoreProperties];
+
     JRSONPropertyInfo *propertyInfo = nil;
+
     unsigned int outCount = 0;
+
     objc_property_t *props = class_copyPropertyList(aClass, &outCount);
+
     for (int i = 0 ; i < outCount; i ++) {
+        
         objc_property_t prop = props[i];
 
         NSString *name = [NSString stringWithUTF8String:property_getName(prop)];
         if ([self keyShouldBeIgnore:name]) continue;
+        if ([ignoreProperties containsObject:name]) continue;
 
         char *typeString = property_copyAttributeValue(prop, "T");
         Class propClass = [self classForPropertyTypeAttr:typeString];

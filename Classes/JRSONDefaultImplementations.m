@@ -15,6 +15,10 @@
 
 @implementation NSObject (JRSONDefaultImplementation)
 
++ (NSArray<NSString *> *)jrsn_ignoreProperties {
+    return nil;
+}
+
 + (NSDictionary<NSString *, Class<JRSON>> *)jrsn_arrayPropertiesClassMap {
     return nil;
 }
@@ -140,5 +144,8 @@
 @end
 
 @implementation NSURL (JRSONDefaultImplementation)
+@end
+
+@implementation NSData (JRSONDefaultImplementation)
 @end
 

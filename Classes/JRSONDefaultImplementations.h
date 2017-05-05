@@ -28,6 +28,9 @@
 @interface NSURL (JRSONDefaultImplementation) <JRSON>
 @end
 
+@interface NSData (JRSONDefaultImplementation) <JRSON>
+@end
+
 
 
 

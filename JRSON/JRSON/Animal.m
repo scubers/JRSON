@@ -7,7 +7,7 @@
 //
 
 #import "Animal.h"
-
+#import <UIKit/UIKit.h>
 
 @implementation Person
 
@@ -17,6 +17,12 @@
 
     }
     return self;
+}
+
++ (NSArray<NSString *> *)jrsn_ignoreProperties {
+    return @[
+             @"data",
+             ];
 }
 
 + (NSDictionary<NSString *,Class<JRSON>> *)jrsn_arrayPropertiesClassMap {
@@ -96,6 +102,9 @@
                                 @"33": @33,
                              },
                      };
+
+    _data = UIImagePNGRepresentation([UIImage imageNamed:@"test.png"]);
+    
     return self;
 }
 

@@ -46,6 +46,7 @@
     ||jrsn__checkSubInherit(aClass, [NSDictionary class])
     ||jrsn__checkSubInherit(aClass, [NSDate class])
     ||jrsn__checkSubInherit(aClass, [NSURL class])
+    ||jrsn__checkSubInherit(aClass, [NSData class])
     ;
 }
 
@@ -73,6 +74,9 @@
     else if ([obj isKindOfClass:[NSDictionary class]]) {
         return [self _jrsn_serializeDictionary:obj];
     }
+    else if ([obj isKindOfClass:[NSData class]]) {
+        return [self _jrsn_serializeData:obj];
+    }
     else if ([obj conformsToProtocol:@protocol(JRSON)]) {
         return [self _jrsn_serializeJRSONObj:obj];
     }
@@ -81,8 +85,9 @@
 }
 
 - (NSString *)_jrsn_serializeString:(NSString *)aString {
-    return [[[[aString stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"]
+    return [[[[[aString stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"]
             stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""]
+            stringByReplacingOccurrencesOfString:@"\r" withString:@"\\r"]
             stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"]
             stringByReplacingOccurrencesOfString:@"\t" withString:@"\\t"]
     ;
@@ -116,6 +121,14 @@
     }
     [json appendString:@"}"];
     return json;
+}
+
+- (NSString *)_jrsn_serializeData:(NSData *)data {
+    NSAssert([data isKindOfClass:[NSData class]], @"本处理器只处理【NSData】");
+    if ([data length] > 1024 * 1024) {
+        NSLog(@"序列化Data已经超过 1M；建议减少体积，或者忽略该字段 @see +[jrsn_ignoreProperties]");
+    }
+    return [NSString stringWithFormat:@"\"%@\"", [self _jrsn_serializeString:[data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength]]];
 }
 
 - (NSString *)_jrsn_serializeJRSONObj:(id<JRSON>)jrsonObj {
@@ -155,6 +168,12 @@
     else if (jrsn__checkSubInherit(aClass, [NSURL class])) {
         if (![json jrsn_isString]) return nil;
         return [NSURL URLWithString:(NSString *)json];
+    }
+    else if (jrsn__checkSubInherit(aClass, [NSData class])) {
+        if (![json jrsn_isString]) return nil;
+        NSAssert([json isKindOfClass:[NSString class]], @"%@ 不是字符串", json);
+        return [[NSData alloc] initWithBase64EncodedString:(NSString *)json
+                                                   options:NSDataBase64DecodingIgnoreUnknownCharacters];
     }
     else if (jrsn__checkSubInherit(aClass, [NSString class])) {
         return [NSString stringWithFormat:@"%@", json];
