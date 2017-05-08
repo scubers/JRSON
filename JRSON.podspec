@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     # 基本信息
     s.name = 'JRSON' 
-    s.version="1.1.0"
+    s.version="1.1.1"
     s.summary = 'summary'
     s.homepage = 'http://www.jrwong.com'
     s.license = { :type => 'MIT', :file => 'LICENSE' }
