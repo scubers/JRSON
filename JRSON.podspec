@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
     # 基本信息
     s.name = 'JRSON' 
-    s.version="1.0.9"
+    s.version="1.1.0"
     s.summary = 'summary'
     s.homepage = 'http://www.jrwong.com'
     s.license = { :type => 'MIT', :file => 'LICENSE' }
@@ -14,5 +14,7 @@ Pod::Spec.new do |s|
 
     s.source_files = 'Classes/**/*.{h,m}'
     s.public_header_files = 'Classes/**/*.{h}'
+
+    s.dependency 'MethodCopyer', '~> 1.0.0'
 
  end
