@@ -108,6 +108,10 @@ static id __instance;
     self.transformers[NSStringFromClass(aClass)] = transformer;
 }
 
++ (BOOL)_canCustomFormatClass:(Class<JRSON>)aClass {
+    return [JRSON shared].transformers[NSStringFromClass(aClass)] != nil;
+}
+
 #pragma mark getter setter
 
 - (NSMutableDictionary<NSString *, id<JRSONTransformer>> *)transformers {

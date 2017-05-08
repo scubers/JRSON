@@ -29,6 +29,8 @@
 
 + (id<JRSON>)formatJSON:(id<JRSONValuable>)json withClass:(Class<JRSON>)aClass;
 
++ (BOOL)_canCustomFormatClass:(Class<JRSON>)aClass;
+
 @end
 
 

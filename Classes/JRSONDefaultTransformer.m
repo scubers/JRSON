@@ -248,6 +248,10 @@
             NSDictionary *dict = (NSDictionary *)json;
             Class targetClass = aClass;
 
+            if ([JRSON _canCustomFormatClass:targetClass]) {
+                return [JRSON formatJSON:json withClass:targetClass];
+            }
+
             // 创建一个对象
             id targetObj = [[targetClass alloc] init];
 
