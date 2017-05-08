@@ -9,6 +9,8 @@
 #import "JRSON.h"
 #import <objc/runtime.h>
 #import "JRSONDefaultTransformer.h"
+#import "JRSONDefaultImplementations.h"
+@import MethodCopyer;
 
 @interface JRSON ()
 
@@ -19,6 +21,10 @@
 @end
 
 @implementation JRSON
+
++ (void)load {
+    [JRSON shared];
+}
 
 static id __instance;
 + (instancetype)allocWithZone:(struct _NSZone *)zone {
@@ -37,9 +43,22 @@ static id __instance;
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _defaultTransformer = [JRSONDefaultTransformer new];
+        [self setup];
     }
     return self;
+}
+
+- (void)setup {
+    _defaultTransformer = [JRSONDefaultTransformer new];
+    
+    [MethodCopyer copyMethods:@[
+                                NSStringFromSelector(@selector(jrsn_jsonString)),
+                                NSStringFromSelector(@selector(jrsn_objectFromJSON:)),
+                                NSStringFromSelector(@selector(jrsn_copy)),
+                                ]
+                 fromProtocol:@protocol(JRSON)
+                    fromClass:[JRSNDefaultImp class]
+                      toClass:[NSObject class]];
 }
 
 + (NSString *)parseObjToJSON:(id)obj {

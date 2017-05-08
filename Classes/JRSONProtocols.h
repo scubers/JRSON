@@ -9,7 +9,9 @@
 #ifndef JRSONProtocols_h
 #define JRSONProtocols_h
 
-@protocol JRSON <NSObject>
+@import MethodCopyer;
+
+@protocol JRSON <ClassMethodTestable>
 
 @optional
 
@@ -42,7 +44,7 @@
 
  @return return value description
  */
-- (instancetype)jrsn_copy;
+- (id)jrsn_copy;
 
 @end
 

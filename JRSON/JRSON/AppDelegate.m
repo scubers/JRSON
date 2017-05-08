@@ -26,17 +26,16 @@
 
     Person *p = [Person new];
     [p setup];
-    NSString *json = [JRSON parseObjToJSON:p];
+    NSString *json = [p jrsn_jsonString];
     NSLog(@"%@", json);
     p.json = json;
-    json = [JRSON parseObjToJSON:p];
+    json = [p jrsn_jsonString];
 
     NSLog(@"==========");
     NSLog(@"%@", json);
-    Person *pp = [JRSON formatJSON:json withClass:[Person class]];
+    Person *pp = [Person jrsn_objectFromJSON:json];
     NSLog(@"%@", pp);
-
-    Person *ppp = [JRSON formatJSON:pp.json withClass:[Person class]];
+    Person *ppp = [Person jrsn_objectFromJSON:pp.json];
     NSLog(@"%@", ppp);
     
     NSArray *a = [[JRSONPropertyAnalyzing shared] analyzeClass:[Person class]];

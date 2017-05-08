@@ -9,53 +9,6 @@
 #import "JRSONDefaultImplementations.h"
 #import "JRSON.h"
 
-@interface NSObject (JRSONDefaultImplementation)
-
-@end
-
-@implementation NSObject (JRSONDefaultImplementation)
-
-+ (NSArray<NSString *> *)jrsn_ignoreProperties {
-    return nil;
-}
-
-+ (NSDictionary<NSString *, Class<JRSON>> *)jrsn_arrayPropertiesClassMap {
-    return nil;
-}
-
-+ (NSDictionary<NSString *, Class<JRSON>> *)jrsn_dictPropertiesClassMap {
-    return nil;
-}
-
-- (NSString *)jrsn_jsonString {
-    return [JRSON parseObjToJSON:(id<JRSON>)self];
-}
-
-+ (id)jrsn_objectFromJSON:(NSString *)json {
-    return [JRSON formatJSON:json withClass:self];
-}
-
-- (instancetype)jrsn_copy {
-    NSAssert(![self isKindOfClass:[NSDictionary class]], @"- jrsn_copy 不支持字典", self);
-    NSAssert([self conformsToProtocol:@protocol(JRSON)], @"对象[%@], 未实现 protocol <JRSON>", self);
-    if ([self isKindOfClass:[NSArray class]]) {
-
-        NSMutableArray *newArray = [NSMutableArray array];
-        [((NSArray *)self) enumerateObjectsUsingBlock:^(id<JRSON>  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            [newArray addObject:[obj jrsn_copy]];
-        }];
-
-        if ([self isKindOfClass:[NSMutableArray class]]) {
-            return newArray;
-        }
-        return [newArray copy];
-    }
-    return [JRSON formatJSON:[JRSON parseObjToJSON:(id<JRSON>)self] withClass:self.class];
-
-}
-
-@end
-
 
 
 @implementation NSString (JRSONDefaultImplementation)
@@ -149,3 +102,49 @@
 @implementation NSData (JRSONDefaultImplementation)
 @end
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+@implementation JRSNDefaultImp
+
++ (NSArray<NSString *> *)jrsn_ignoreProperties {
+    return nil;
+}
+
++ (NSDictionary<NSString *, Class<JRSON>> *)jrsn_arrayPropertiesClassMap {
+    return nil;
+}
+
++ (NSDictionary<NSString *, Class<JRSON>> *)jrsn_dictPropertiesClassMap {
+    return nil;
+}
+
+- (NSString *)jrsn_jsonString {
+    return [JRSON parseObjToJSON:(id<JRSON>)self];
+}
+
++ (id)jrsn_objectFromJSON:(NSString *)json {
+    return [JRSON formatJSON:json withClass:self];
+}
+
+- (id)jrsn_copy {
+    NSAssert(![self isKindOfClass:[NSDictionary class]], @"- jrsn_copy 不支持字典", self);
+    NSAssert([self conformsToProtocol:@protocol(JRSON)], @"对象[%@], 未实现 protocol <JRSON>", self);
+    if ([self isKindOfClass:[NSArray class]]) {
+
+        NSMutableArray *newArray = [NSMutableArray array];
+        [((NSArray *)self) enumerateObjectsUsingBlock:^(id<JRSON>  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [newArray addObject:[obj jrsn_copy]];
+        }];
+
+        if ([self isKindOfClass:[NSMutableArray class]]) {
+            return newArray;
+        }
+        return [newArray copy];
+    }
+    return [JRSON formatJSON:[JRSON parseObjToJSON:(id<JRSON>)self] withClass:self.class];
+    
+}
+
+
+@end
