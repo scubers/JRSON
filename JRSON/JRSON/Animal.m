@@ -104,6 +104,8 @@
                      };
 
     _data = UIImagePNGRepresentation([UIImage imageNamed:@"test.png"]);
+
+    _littleDog = [LittleDog new];
     
     return self;
 }
@@ -128,6 +130,33 @@
 - (instancetype)setup {
     _name = @"job";
     return self;
+}
+
+@end
+
+
+@implementation LittleDog
+
+
+
+@end
+
+
+@implementation LittleDogTransformer
+
+- (BOOL)jrsn_canHandleWithClass:(Class)aClass {
+    return aClass == [LittleDogTransformer class];
+}
+
+- (id<JRSONValuable>)jrsn_serializeObj:(id)obj {
+    return @{
+             @"aaa" : @"bbb",
+             };
+}
+
+- (id<JRSON>)jrsn_deserializeJson:(id<JRSONValuable>)json withClass:(Class<JRSON>)aClass {
+    NSLog(@"%@----", json);
+    return [LittleDogTransformer new];
 }
 
 @end

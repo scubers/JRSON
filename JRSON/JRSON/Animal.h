@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "JRSONProtocols.h"
 
+
 @class Dog;
+@class LittleDog;
 
 @interface Person : NSObject <JRSON>
 @property (nonatomic, strong) NSString *name;
@@ -32,6 +34,8 @@
 @property (nonatomic, strong) NSArray *strangeArray;
 @property (nonatomic, strong) NSDictionary *strangeDict;
 
+@property (nonatomic, strong) LittleDog *littleDog;
+
 
 - (instancetype)setup;
 
@@ -45,3 +49,16 @@
 
 @end
 
+@interface LittleDog : NSObject <JRSON>
+
+@property (nonatomic, strong) NSString *abaaaa;
+
+@end
+
+
+
+@interface LittleDogTransformer : NSObject <JRSONTransformer>
+
+
+
+@end

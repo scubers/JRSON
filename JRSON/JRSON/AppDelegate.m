@@ -12,6 +12,7 @@
 #import "JRSONDefaultImplementations.h"
 #import "JRSONPropertyAnalyzing.h"
 #import "NSDataTransformer.h"
+#import "JRSONTransformerManager.h"
 
 
 @interface AppDelegate ()
@@ -22,11 +23,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-//    [JRSON setTransformer:[NSDataTransformer new] forClass:[NSData class]];
+
+//    [JRSON setTransformer:[LittleDogTransformer new] forClass:[LittleDog class]];
+
+    [[JRSONTransformerManager shared] setTransformer:[LittleDogTransformer new] forClass:[LittleDog class]];
 
     Person *p = [Person new];
     [p setup];
     NSString *json = [p jrsn_jsonString];
+    Person *np = [Person jrsn_objectFromJSON:json];
     NSLog(@"%@", json);
     p.json = json;
     json = [p jrsn_jsonString];

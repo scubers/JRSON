@@ -65,7 +65,7 @@
 /// 将对象转化成JSON字符串的工具
 @protocol JRSONSerializer <NSObject>
 
-- (NSString *)jrsn_serializeObj:(id)obj;
+- (id<JRSONValuable>)jrsn_serializeObj:(id)obj;
 
 @end
 

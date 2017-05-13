@@ -14,22 +14,9 @@
 
 @interface JRSON : NSObject
 
++ (NSString *)objectToJSON:(id<JRSON>)object;
 
-/**
- 设置指定类的转化器
-
- @param transformer transformer description
- @param aClass aClass description
- */
-+ (void)setTransformer:(id<JRSONTransformer>)transformer forClass:(Class<JRSON>)aClass;
-
-
-+ (NSString *)parseObjToJSON:(id<JRSON>)obj;
-
-
-+ (id<JRSON>)formatJSON:(id<JRSONValuable>)json withClass:(Class<JRSON>)aClass;
-
-+ (BOOL)_canCustomFormatClass:(Class<JRSON>)aClass;
++ (id<JRSON>)JSONToObject:(NSString *)json class:(Class<JRSON>)aClass;
 
 @end
 

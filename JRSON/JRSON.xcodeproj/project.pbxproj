@@ -13,12 +13,13 @@
 		091DF28E1E0BADDC00FA5D18 /* JRSONTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 091DF28D1E0BADDC00FA5D18 /* JRSONTests.m */; };
 		098BA2AB1E0D12510068F7F6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 098BA2A41E0D12510068F7F6 /* Localizable.strings */; };
 		098BA2AC1E0D12510068F7F6 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 098BA2A61E0D12510068F7F6 /* Media.xcassets */; };
+		A83054191EC5CBE700DFF533 /* JRSONNewTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = A83054181EC5CBE700DFF533 /* JRSONNewTransformer.m */; };
+		A830541C1EC6FB4300DFF533 /* JRSONTransformerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A830541B1EC6FB4300DFF533 /* JRSONTransformerManager.m */; };
 		A83C36591E913D0000A5D2DE /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = A83C36581E913D0000A5D2DE /* Animal.m */; };
 		A86B71201E94ECB900604699 /* JRSONPropertyAnalyzing.m in Sources */ = {isa = PBXBuildFile; fileRef = A86B711F1E94ECB900604699 /* JRSONPropertyAnalyzing.m */; };
 		A88B4EA21EBC855800EE599A /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = A88B4EA11EBC855800EE599A /* test.png */; };
 		A88B4EA51EBC8A6100EE599A /* NSDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = A88B4EA41EBC8A6100EE599A /* NSDataTransformer.m */; };
 		A899ACA71E8928AD0046CDA8 /* JRSON.m in Sources */ = {isa = PBXBuildFile; fileRef = A899ACA11E8928AD0046CDA8 /* JRSON.m */; };
-		A899ACA81E8928AD0046CDA8 /* JRSONDefaultTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = A899ACA31E8928AD0046CDA8 /* JRSONDefaultTransformer.m */; };
 		A899ACA91E8928AD0046CDA8 /* JRSONDefaultImplementations.m in Sources */ = {isa = PBXBuildFile; fileRef = A899ACA51E8928AD0046CDA8 /* JRSONDefaultImplementations.m */; };
 		BFE3B955AD94962191513CDD /* Pods_JRSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9332CEDF73994C5824FF6F8 /* Pods_JRSON.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,10 @@
 		098BA2AA1E0D12510068F7F6 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6952C2E88AD27106435576FD /* Pods-JRSON.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JRSON.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JRSON/Pods-JRSON.debug.xcconfig"; sourceTree = "<group>"; };
 		9548869C2390001CA006034C /* Pods-JRSON.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JRSON.release.xcconfig"; path = "Pods/Target Support Files/Pods-JRSON/Pods-JRSON.release.xcconfig"; sourceTree = "<group>"; };
+		A83054171EC5CBE700DFF533 /* JRSONNewTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSONNewTransformer.h; sourceTree = "<group>"; };
+		A83054181EC5CBE700DFF533 /* JRSONNewTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSONNewTransformer.m; sourceTree = "<group>"; };
+		A830541A1EC6FB4300DFF533 /* JRSONTransformerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSONTransformerManager.h; sourceTree = "<group>"; };
+		A830541B1EC6FB4300DFF533 /* JRSONTransformerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSONTransformerManager.m; sourceTree = "<group>"; };
 		A83C36571E913D0000A5D2DE /* Animal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animal.h; sourceTree = "<group>"; };
 		A83C36581E913D0000A5D2DE /* Animal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
 		A86B711E1E94ECB900604699 /* JRSONPropertyAnalyzing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSONPropertyAnalyzing.h; sourceTree = "<group>"; };
@@ -64,8 +69,6 @@
 		A88B4EA41EBC8A6100EE599A /* NSDataTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataTransformer.m; sourceTree = "<group>"; };
 		A899ACA01E8928AD0046CDA8 /* JRSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSON.h; sourceTree = "<group>"; };
 		A899ACA11E8928AD0046CDA8 /* JRSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSON.m; sourceTree = "<group>"; };
-		A899ACA21E8928AD0046CDA8 /* JRSONDefaultTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSONDefaultTransformer.h; sourceTree = "<group>"; };
-		A899ACA31E8928AD0046CDA8 /* JRSONDefaultTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSONDefaultTransformer.m; sourceTree = "<group>"; };
 		A899ACA41E8928AD0046CDA8 /* JRSONDefaultImplementations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSONDefaultImplementations.h; sourceTree = "<group>"; };
 		A899ACA51E8928AD0046CDA8 /* JRSONDefaultImplementations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSONDefaultImplementations.m; sourceTree = "<group>"; };
 		A899ACA61E8928AD0046CDA8 /* JRSONProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSONProtocols.h; sourceTree = "<group>"; };
@@ -147,8 +150,6 @@
 			children = (
 				A899ACA01E8928AD0046CDA8 /* JRSON.h */,
 				A899ACA11E8928AD0046CDA8 /* JRSON.m */,
-				A899ACA21E8928AD0046CDA8 /* JRSONDefaultTransformer.h */,
-				A899ACA31E8928AD0046CDA8 /* JRSONDefaultTransformer.m */,
 				A899ACA41E8928AD0046CDA8 /* JRSONDefaultImplementations.h */,
 				A899ACA51E8928AD0046CDA8 /* JRSONDefaultImplementations.m */,
 				A899ACA61E8928AD0046CDA8 /* JRSONProtocols.h */,
@@ -157,6 +158,10 @@
 				A88B4EA31EBC8A6100EE599A /* NSDataTransformer.h */,
 				A88B4EA41EBC8A6100EE599A /* NSDataTransformer.m */,
 				098BA2A31E0D12510068F7F6 /* resource */,
+				A83054171EC5CBE700DFF533 /* JRSONNewTransformer.h */,
+				A83054181EC5CBE700DFF533 /* JRSONNewTransformer.m */,
+				A830541A1EC6FB4300DFF533 /* JRSONTransformerManager.h */,
+				A830541B1EC6FB4300DFF533 /* JRSONTransformerManager.m */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -360,10 +365,11 @@
 			files = (
 				A899ACA71E8928AD0046CDA8 /* JRSON.m in Sources */,
 				A899ACA91E8928AD0046CDA8 /* JRSONDefaultImplementations.m in Sources */,
+				A83054191EC5CBE700DFF533 /* JRSONNewTransformer.m in Sources */,
 				091DF2781E0BADDC00FA5D18 /* AppDelegate.m in Sources */,
+				A830541C1EC6FB4300DFF533 /* JRSONTransformerManager.m in Sources */,
 				A83C36591E913D0000A5D2DE /* Animal.m in Sources */,
 				A88B4EA51EBC8A6100EE599A /* NSDataTransformer.m in Sources */,
-				A899ACA81E8928AD0046CDA8 /* JRSONDefaultTransformer.m in Sources */,
 				A86B71201E94ECB900604699 /* JRSONPropertyAnalyzing.m in Sources */,
 				091DF2751E0BADDC00FA5D18 /* main.m in Sources */,
 			);
