@@ -14,10 +14,19 @@
 
 @interface JRSON : NSObject
 
-+ (NSString *)objectToJSON:(id<JRSON>)object;
+#pragma mark json format method
 
-+ (id<JRSON>)JSONToObject:(NSString *)json class:(Class<JRSON>)aClass;
++ (NSString *)jsonStringWithObject:(id<JRSON>)object;
 
++ (id<JRSON>)objectWithJSONString:(NSString *)jsonString class:(Class<JRSON>)aClass;
+
+#pragma mark json valuable method
+
++ (id<JRSONValuable>)jsonValueWithObject:(id<JRSON>)object;
+
++ (id<JRSON>)objectWithJSONValue:(id<JRSONValuable>)jsonValue class:(Class<JRSON>)aClass;
+
+#pragma mark json transformer method
 
 + (void)addTransformer:(id<JRSONTransformer>)transformer;
 

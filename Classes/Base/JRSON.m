@@ -32,8 +32,9 @@
 }
 
 
+#pragma mark json format method
 
-+ (NSString *)objectToJSON:(id<JRSON>)object {
++ (NSString *)jsonStringWithObject:(id<JRSON>)object {
     id<JRSONValuable> jsonValue = [[JRSONTransformerManager shared] jsonValueFromObj:object];
     NSError *error;
     NSData *data = [NSJSONSerialization dataWithJSONObject:jsonValue options:0 error:&error];
@@ -44,9 +45,10 @@
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
-+ (id<JRSON>)JSONToObject:(NSString *)json class:(Class<JRSON>)aClass {
++ (id<JRSON>)objectWithJSONString:(NSString *)jsonString class:(Class<JRSON>)aClass {
+
     NSError *error;
-    id obj = [NSJSONSerialization JSONObjectWithData:[json dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&error];
+    id obj = [NSJSONSerialization JSONObjectWithData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:&error];
     if (error) {
         NSLog(@"%@", error);
         return nil;
@@ -59,6 +61,19 @@
     }
     return [[JRSONTransformerManager shared] objFromJSONValue:obj class:aClass];
 }
+
+#pragma mark json valuable method
+
++ (id<JRSONValuable>)jsonValueWithObject:(id<JRSON>)object {
+    return [[JRSONTransformerManager shared] jsonValueFromObj:object];
+}
+
++ (id<JRSON>)objectWithJSONValue:(id<JRSONValuable>)jsonValue class:(Class<JRSON>)aClass {
+    return [[JRSONTransformerManager shared] objFromJSONValue:jsonValue class:aClass];
+}
+
+
+#pragma mark json transformer method
 
 + (void)addTransformer:(id<JRSONTransformer>)transformer {
     [[JRSONTransformerManager shared] addTransformer:transformer];

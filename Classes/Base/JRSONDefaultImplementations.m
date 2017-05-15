@@ -73,11 +73,11 @@
 }
 
 - (NSString *)jrsn_jsonString {
-    return [JRSON objectToJSON:(id<JRSON>)self];
+    return [JRSON jsonStringWithObject:(id<JRSON>)self];
 }
 
 + (id)jrsn_objectFromJSON:(NSString *)json {
-    return [JRSON JSONToObject:json class:self];
+    return [JRSON objectWithJSONString:json class:self];
 }
 
 - (id)jrsn_copy {
@@ -95,7 +95,7 @@
         }
         return [newArray copy];
     }
-    return [JRSON JSONToObject:[JRSON objectToJSON:(id<JRSON>)self] class:self.class];
+    return [JRSON objectWithJSONString:[JRSON jsonStringWithObject:(id<JRSON>)self] class:self.class];
 }
 
 
