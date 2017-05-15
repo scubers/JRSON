@@ -14,6 +14,7 @@
 #import "JRSONNumberTransformer.h"
 #import "JRSONDateTransformer.h"
 #import "JRSONURLTransformer.h"
+#import "JRSONDataTransformer.h"
 
 @interface JRSONTransformerManager ()
 
@@ -47,6 +48,7 @@ static id __INSTANCE;
                           [JRSONStringTransformer new],
                           [JRSONNumberTransformer new],
                           [JRSONDateTransformer new],
+                          [JRSONDataTransformer new],
                           [JRSONURLTransformer new],
                           ].mutableCopy;
         _cachedTransformers = [[NSMutableDictionary<NSString *, id<JRSONTransformer>> alloc] init];
