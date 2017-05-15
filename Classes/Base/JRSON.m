@@ -60,12 +60,12 @@
     return [[JRSONTransformerManager shared] objFromJSONValue:obj class:aClass];
 }
 
-- (void)addTransformer:(id<JRSONTransformer>)transformer {
++ (void)addTransformer:(id<JRSONTransformer>)transformer {
     [[JRSONTransformerManager shared] addTransformer:transformer];
 }
 
 
-- (void)removeTransformer:(Class<JRSONTransformer>)transformer {
++ (void)removeTransformer:(Class<JRSONTransformer>)transformer {
     [[JRSONTransformerManager shared] removeTransformer:transformer];
 }
 
