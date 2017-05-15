@@ -11,8 +11,8 @@
 #import "Animal.h"
 #import "JRSONDefaultImplementations.h"
 #import "JRSONPropertyAnalyzing.h"
-#import "NSDataTransformer.h"
 #import "JRSONTransformerManager.h"
+#import "JRSONDataTransformer.h"
 
 
 @interface AppDelegate ()
@@ -23,38 +23,25 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
-
-//    [JRSON setTransformer:[LittleDogTransformer new] forClass:[LittleDog class]];
-
-    [[JRSONTransformerManager shared] setTransformer:[LittleDogTransformer new] forClass:[LittleDog class]];
+    [[JRSONTransformerManager shared] addTransformer:[LittleDogTransformer new]];
+//    [[JRSONTransformerManager shared] addTransformer:[JRSONDataTransformer new]];
 
     Person *p = [Person new];
     [p setup];
-    NSString *json = [p jrsn_jsonString];
-    Person *np = [Person jrsn_objectFromJSON:json];
+
+    NSArray *arr = @[p,p,p,p];
+
+    NSString *json = [arr jrsn_jsonString];
+
     NSLog(@"%@", json);
-    p.json = json;
-    json = [p jrsn_jsonString];
 
-    NSLog(@"==========");
-    NSLog(@"%@", json);
-    Person *pp = [Person jrsn_objectFromJSON:json];
-    NSLog(@"%@", pp);
-    Person *ppp = [Person jrsn_objectFromJSON:pp.json];
-    NSLog(@"%@", ppp);
-    
-    NSArray *a = [[JRSONPropertyAnalyzing shared] analyzeClass:[Person class]];
+    NSArray *newarr = [Person jrsn_objectFromJSON:json];
 
-    UIImage *image = [UIImage imageNamed:@"test.png"];
+    NSDictionary *dict = @{@"key" : p};
 
-    NSData *data = UIImagePNGRepresentation(image);
+    NSString *dictJson = [dict jrsn_jsonString];
 
-    NSDate *date = [NSDate date];
-    NSString *string = [data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    NSData *newData = [[NSData alloc] initWithBase64EncodedString:string options:NSDataBase64DecodingIgnoreUnknownCharacters];
-    NSLog(@"%f", [[NSDate date] timeIntervalSinceDate:date]);
-
-    UIImage *newImage = [UIImage imageWithData:newData];
+    NSLog(@"%@", dictJson);
 
     return YES;
 }

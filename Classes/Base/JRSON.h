@@ -18,6 +18,12 @@
 
 + (id<JRSON>)JSONToObject:(NSString *)json class:(Class<JRSON>)aClass;
 
+
+- (void)addTransformer:(id<JRSONTransformer>)transformer;
+
+- (void)removeTransformer:(Class<JRSONTransformer>)transformer;
+
+
 @end
 
 

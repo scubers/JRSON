@@ -9,16 +9,6 @@
 #import "JRSONPropertyAnalyzing.h"
 #import <objc/runtime.h>
 
-BOOL jrsn__checkSubInherit(Class subClass, Class targetSuperClass) {
-    if (subClass == targetSuperClass) {
-        return YES;
-    }
-    Class realSuperClass = class_getSuperclass(subClass);
-    if (!realSuperClass) {
-        return NO;
-    }
-    return jrsn__checkSubInherit(realSuperClass, targetSuperClass);
-}
 
 @implementation JRSONPropertyInfo
 @end
@@ -82,60 +72,46 @@ static id __instance;
         propertyInfo.name = name;
 
         propertyInfo.targetClass = propClass;
-        if (jrsn__checkSubInherit(propClass, [NSString class])) {
-            propertyInfo.type = JRSONPropertyTypeString;
-        }
-        else if (jrsn__checkSubInherit(propClass, [NSNumber class])) {
-            propertyInfo.type = JRSONPropertyTypeNumber;
-        }
-        else if (jrsn__checkSubInherit(propClass, [NSURL class])) {
-            propertyInfo.type = JRSONPropertyTypeURL;
-        }
-        else if (jrsn__checkSubInherit(propClass, [NSDate class])) {
-            propertyInfo.type = JRSONPropertyTypeDate;
-        }
-        else if (jrsn__checkSubInherit(propClass, [NSArray class])) {
+        propertyInfo.type = JRSONPropertyTypeJRSONObj;
+
+        if ([propClass isSubclassOfClass:[NSArray class]]) {
             propertyInfo.type = JRSONPropertyTypeArray;
             Class clazz = nil;
             if ([aClass respondsToClassMethod:@selector(jrsn_arrayPropertiesClassMap)]) {
                 clazz = [aClass jrsn_arrayPropertiesClassMap][name];
             }
-            NSAssert(!jrsn__checkSubInherit(clazz, [NSArray class]),
+            NSAssert(![clazz isSubclassOfClass:[NSArray class]],
                      @"[%@ %@] 不能反序列化数组中的数组",
                      NSStringFromClass(aClass),
                      NSStringFromSelector(@selector(jrsn_arrayPropertiesClassMap)));
-            NSAssert(!jrsn__checkSubInherit(clazz, [NSDictionary class]),
+            NSAssert(![clazz isSubclassOfClass:[NSDictionary class]],
                      @"[%@ %@] 不能反序列化数组中的字典",
                      NSStringFromClass(aClass),
                      NSStringFromSelector(@selector(jrsn_arrayPropertiesClassMap)));
             propertyInfo.arrayClass = clazz;
         }
-        else if (jrsn__checkSubInherit(propClass, [NSDictionary class])) {
+        else if ([propClass isSubclassOfClass:[NSDictionary class]]) {
             propertyInfo.type = JRSONPropertyTypeDictionary;
             Class clazz = nil;
             if ([aClass respondsToClassMethod:@selector(jrsn_dictPropertiesClassMap)]) {
                 clazz = [aClass jrsn_dictPropertiesClassMap][name];
             }
 
-            NSAssert(!jrsn__checkSubInherit(clazz, [NSArray class]),
+            NSAssert(![clazz isSubclassOfClass:[NSArray class]],
                      @"[%@ %@] 不能反序列化数组中的数组",
                      NSStringFromClass(aClass),
                      NSStringFromSelector(@selector(jrsn_dictPropertiesClassMap)));
-            NSAssert(!jrsn__checkSubInherit(clazz, [NSDictionary class]),
+            NSAssert(![clazz isSubclassOfClass:[NSDictionary class]],
                      @"[%@ %@] 不能反序列化数组中的字典",
                      NSStringFromClass(aClass),
                      NSStringFromSelector(@selector(jrsn_dictPropertiesClassMap)));
 
             propertyInfo.dictClass = clazz;
         }
-        else if (class_conformsToProtocol(aClass, @protocol(JRSON))) {
-            propertyInfo.type = JRSONPropertyTypeJRSONObj;
-//            propertyInfo.subInfos = [self analyzeClass:propClass];
-        }
-        else {
+        else if (!class_conformsToProtocol(aClass, @protocol(JRSON))) {
             continue;
         }
-
+        
         [info addObject:propertyInfo];
     }
     free(props);

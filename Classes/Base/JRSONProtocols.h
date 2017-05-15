@@ -11,6 +11,7 @@
 
 @import MethodCopyer;
 
+
 @protocol JRSON <ClassMethodTestable>
 
 @optional
@@ -50,13 +51,19 @@
 
 ////////////////////////////////////////////////////////////////////////
 
+typedef NS_ENUM(int, JRSONValuableType) {
+    JRSONValuableTypeString,
+    JRSONValuableTypeNumber,
+    JRSONValuableTypeArray,
+    JRSONValuableTypeDictionary,
+};
+
 /// 可以作为json的值的协议
 /// NSString, NSNumber, NSDictionary, NSArray都遵守本协议
 @protocol JRSONValuable <JRSON>
-- (BOOL)jrsn_isNumber;
-- (BOOL)jrsn_isString;
-- (BOOL)jrsn_isArray;
-- (BOOL)jrsn_isDictionary;
+
+- (JRSONValuableType)jrsn_valuableType;
+
 @end
 
 
@@ -65,7 +72,7 @@
 /// 将对象转化成JSON字符串的工具
 @protocol JRSONSerializer <NSObject>
 
-- (id<JRSONValuable>)jrsn_serializeObj:(id)obj;
+- (id<JRSONValuable>)jrsn_serializeObj:(id<JRSON>)obj;
 
 @end
 

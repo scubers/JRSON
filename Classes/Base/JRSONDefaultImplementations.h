@@ -22,13 +22,10 @@
 @interface NSDictionary (JRSONDefaultImplementation) <JRSONValuable>
 @end
 
-@interface NSDate (JRSONDefaultImplementation) <JRSON>
-@end
-
 @interface NSURL (JRSONDefaultImplementation) <JRSON>
 @end
 
-@interface NSData (JRSONDefaultImplementation) <JRSON>
+@interface NSDate (JRSONDefaultImplementation) <JRSON>
 @end
 
 

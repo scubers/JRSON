@@ -9,15 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "JRSONProtocols.h"
 
-BOOL jrsn__checkSubInherit(Class subClass, Class targetSuperClass);
-
 typedef NS_ENUM(NSInteger, JRSONPropertyType) {
-    JRSONPropertyTypeString,
-    JRSONPropertyTypeNumber,
     JRSONPropertyTypeArray,
     JRSONPropertyTypeDictionary,
-    JRSONPropertyTypeDate,
-    JRSONPropertyTypeURL,
     JRSONPropertyTypeJRSONObj,
 };
 

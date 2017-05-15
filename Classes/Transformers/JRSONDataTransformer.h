@@ -1,5 +1,5 @@
 //
-//  NSDataTransformer.h
+//  JRSONDataTransformer.h
 //  JRSON
 //
 //  Created by 王俊仁 on 2017/5/5.
@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "JRSONProtocols.h"
 
-@interface NSDataTransformer : NSObject <JRSONTransformer>
+@interface JRSONDataTransformer : NSObject <JRSONTransformer>
+
+@end
+
+@interface NSData (JRSONDataTransformer) <JRSON>
 
 @end

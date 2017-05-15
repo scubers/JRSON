@@ -8,6 +8,7 @@
 
 #import "Animal.h"
 #import <UIKit/UIKit.h>
+#import "JRSONDefaultImplementations.h"
 
 @implementation Person
 
@@ -21,7 +22,7 @@
 
 + (NSArray<NSString *> *)jrsn_ignoreProperties {
     return @[
-             @"data",
+//             @"data",
              ];
 }
 
@@ -74,11 +75,11 @@
     }];
 
     _strings = @[
-                 @"123123",
-                 @"123123",
-                 @"123123",
-                 @"123123",
-                 @"123123",
+                 @"1",
+                 @"2",
+                 @"3",
+                 @"4",
+                 @"5",
                  ];
 
     _dicts = @{
@@ -145,7 +146,7 @@
 @implementation LittleDogTransformer
 
 - (BOOL)jrsn_canHandleWithClass:(Class)aClass {
-    return aClass == [LittleDogTransformer class];
+    return aClass == [LittleDog class];
 }
 
 - (id<JRSONValuable>)jrsn_serializeObj:(id)obj {
@@ -156,7 +157,7 @@
 
 - (id<JRSON>)jrsn_deserializeJson:(id<JRSONValuable>)json withClass:(Class<JRSON>)aClass {
     NSLog(@"%@----", json);
-    return [LittleDogTransformer new];
+    return [LittleDog new];
 }
 
 @end

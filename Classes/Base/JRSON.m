@@ -9,7 +9,6 @@
 #import "JRSON.h"
 #import <objc/runtime.h>
 #import "JRSONDefaultImplementations.h"
-#import "JRSONNewTransformer.h"
 #import "JRSONTransformerManager.h"
 @import MethodCopyer;
 
@@ -52,9 +51,23 @@
         NSLog(@"%@", error);
         return nil;
     }
+    if (
+        [((Class)aClass) isSubclassOfClass:[NSDictionary class]]
+        ||
+        [((Class)aClass) isSubclassOfClass:[NSArray class]]) {
+        return obj;
+    }
     return [[JRSONTransformerManager shared] objFromJSONValue:obj class:aClass];
 }
 
+- (void)addTransformer:(id<JRSONTransformer>)transformer {
+    [[JRSONTransformerManager shared] addTransformer:transformer];
+}
+
+
+- (void)removeTransformer:(Class<JRSONTransformer>)transformer {
+    [[JRSONTransformerManager shared] removeTransformer:transformer];
+}
 
 
 @end

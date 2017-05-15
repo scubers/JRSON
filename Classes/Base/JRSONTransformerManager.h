@@ -13,14 +13,15 @@
 
 + (instancetype)shared;
 
-@property (nonatomic, strong) id<JRSONTransformer> defaultTransformer;
 
-- (void)setTransformer:(id<JRSONTransformer>)transformer forClass:(Class<JRSON>)aClass;
+- (void)addTransformer:(id<JRSONTransformer>)transformer;
 
-- (void)removeTransformerForClass:(Class<JRSON>)aClass;
+
+- (void)removeTransformer:(Class<JRSONTransformer>)transformer;
 
 
 - (id<JRSONValuable>)jsonValueFromObj:(id<JRSON>)obj;
+
 
 - (id<JRSON>)objFromJSONValue:(id<JRSONValuable>)jsonValue class:(Class<JRSON>)aClass;
 

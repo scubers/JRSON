@@ -13,83 +13,38 @@
 
 @implementation NSString (JRSONDefaultImplementation)
 
-- (BOOL)jrsn_isNumber {
-    return [self isKindOfClass:[NSNumber class]];
-}
-
-- (BOOL)jrsn_isString {
-    return [self isKindOfClass:[NSString class]];
-}
-
-- (BOOL)jrsn_isArray {
-    return [self isKindOfClass:[NSArray class]];
-}
-
-- (BOOL)jrsn_isDictionary {
-    return [self isKindOfClass:[NSDictionary class]];
+- (JRSONValuableType)jrsn_valuableType {
+    return JRSONValuableTypeString;
 }
 
 @end
 
 @implementation NSNumber (JRSONDefaultImplementation)
 
-- (BOOL)jrsn_isNumber {
-    return [self isKindOfClass:[NSNumber class]];
+- (JRSONValuableType)jrsn_valuableType {
+    return JRSONValuableTypeNumber;
 }
 
-- (BOOL)jrsn_isString {
-    return [self isKindOfClass:[NSString class]];
-}
-
-- (BOOL)jrsn_isArray {
-    return [self isKindOfClass:[NSArray class]];
-}
-
-- (BOOL)jrsn_isDictionary {
-    return [self isKindOfClass:[NSDictionary class]];
-}
 
 @end
 
 
 @implementation NSArray (JRSONDefaultImplementation)
 
-- (BOOL)jrsn_isNumber {
-    return [self isKindOfClass:[NSNumber class]];
+- (JRSONValuableType)jrsn_valuableType {
+    return JRSONValuableTypeArray;
 }
 
-- (BOOL)jrsn_isString {
-    return [self isKindOfClass:[NSString class]];
-}
-
-- (BOOL)jrsn_isArray {
-    return [self isKindOfClass:[NSArray class]];
-}
-
-- (BOOL)jrsn_isDictionary {
-    return [self isKindOfClass:[NSDictionary class]];
-}
 
 @end
 
 
 @implementation NSDictionary (JRSONDefaultImplementation)
 
-- (BOOL)jrsn_isNumber {
-    return [self isKindOfClass:[NSNumber class]];
+- (JRSONValuableType)jrsn_valuableType {
+    return JRSONValuableTypeDictionary;
 }
 
-- (BOOL)jrsn_isString {
-    return [self isKindOfClass:[NSString class]];
-}
-
-- (BOOL)jrsn_isArray {
-    return [self isKindOfClass:[NSArray class]];
-}
-
-- (BOOL)jrsn_isDictionary {
-    return [self isKindOfClass:[NSDictionary class]];
-}
 
 @end
 
@@ -99,8 +54,6 @@
 @implementation NSURL (JRSONDefaultImplementation)
 @end
 
-@implementation NSData (JRSONDefaultImplementation)
-@end
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
