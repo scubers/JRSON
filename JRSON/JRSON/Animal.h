@@ -13,7 +13,16 @@
 @class Dog;
 @class LittleDog;
 
-@interface Person : NSObject <JRSON>
+@interface Animal : NSObject <JRSON>
+
+@property (nonatomic, strong) NSString *xxxxx;
+
+@property (nonatomic, strong) NSArray *animalsDog;
+
+@end
+
+
+@interface Person : Animal <JRSON>
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, assign) int age;
 @property (nonatomic, assign) BOOL isMale;

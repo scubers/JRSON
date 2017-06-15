@@ -36,6 +36,9 @@ static id __instance;
 }
 
 - (NSArray<JRSONPropertyInfo *> *)analyzeClass:(Class<JRSON>)aClass {
+    if (!class_conformsToProtocol(aClass, @protocol(JRSON))) {
+        return nil;
+    }
     NSArray<JRSONPropertyInfo *> *cacheInfo = self.infos[NSStringFromClass(aClass)];
     if (cacheInfo) return cacheInfo;
 
@@ -115,6 +118,14 @@ static id __instance;
         [info addObject:propertyInfo];
     }
     free(props);
+
+    Class superClass = class_getSuperclass(aClass);
+    if (!class_isMetaClass(superClass) && superClass) {
+        NSArray *arr = [self analyzeClass:superClass];
+        if (arr.count) {
+            [info addObjectsFromArray:arr];
+        }
+    }
 
     self.infos[NSStringFromClass(aClass)] = info;
     return info;

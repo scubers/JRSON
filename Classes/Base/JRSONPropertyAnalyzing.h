@@ -17,6 +17,8 @@ typedef NS_ENUM(NSInteger, JRSONPropertyType) {
 
 @interface JRSONPropertyInfo : NSObject
 
+@property (nonatomic, strong) JRSONPropertyInfo *superClassInfo;
+
 @property (nonatomic, assign) JRSONPropertyType type;
 
 @property (nonatomic, copy  ) NSString *name;

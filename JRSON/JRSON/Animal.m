@@ -10,6 +10,36 @@
 #import <UIKit/UIKit.h>
 #import "JRSONDefaultImplementations.h"
 
+@implementation Animal
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _xxxxx = @"100";
+
+        _animalsDog = @[
+                  [Dog new],
+                  [Dog new],
+                  [Dog new],
+                  [Dog new],
+                  [Dog new],
+                  [Dog new],
+                  ];
+
+        [_animalsDog enumerateObjectsUsingBlock:^(Dog * obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [obj setup];
+        }];
+    }
+    return self;
+}
+
++ (NSDictionary<NSString *,Class<JRSON>> *)jrsn_arrayPropertiesClassMap {
+    return @{@"animalsDog" : Dog.class};
+}
+
+@end
+
 @implementation Person
 
 - (instancetype)init {
@@ -104,7 +134,7 @@
                              },
                      };
 
-    _data = UIImagePNGRepresentation([UIImage imageNamed:@"test.png"]);
+//    _data = UIImagePNGRepresentation([UIImage imageNamed:@"test.png"]);
 
     _littleDog = [LittleDog new];
     
