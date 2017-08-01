@@ -21,7 +21,7 @@
 
 + (void)load {
 
-    [MethodCopyer copyMethods:@[
+    [MCMethodCopyer copyMethods:@[
                                 NSStringFromSelector(@selector(jrsn_jsonString)),
                                 NSStringFromSelector(@selector(jrsn_objectFromJSON:)),
                                 NSStringFromSelector(@selector(jrsn_copy)),

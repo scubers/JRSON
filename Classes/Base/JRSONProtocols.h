@@ -12,6 +12,7 @@
 @import MethodCopyer;
 
 
+
 @protocol JRSON <ClassMethodTestable>
 
 @optional

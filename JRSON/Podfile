@@ -11,7 +11,7 @@ target 'JRSON' do
 
     # pod 'JRSONDB', :path => '../'
 #    pod 'MethodCopyer', :path => '/Users/Jrwong/Desktop/MethodCopyer'
-   pod 'MethodCopyer', '~> 1.0.0'
+   pod 'MethodCopyer', '~> 1.1.0'
     # pod 'ObjectPool', :path => '/Users/Jrwong/Desktop/ObjectPool'
 
 end
