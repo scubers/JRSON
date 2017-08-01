@@ -16,7 +16,7 @@
 		A83C36591E913D0000A5D2DE /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = A83C36581E913D0000A5D2DE /* Animal.m */; };
 		A88B4EA21EBC855800EE599A /* test.png in Resources */ = {isa = PBXBuildFile; fileRef = A88B4EA11EBC855800EE599A /* test.png */; };
 		A890803F1EC94AB200DE0A78 /* JRSONDataTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = A890803D1EC94AB200DE0A78 /* JRSONDataTransformer.m */; };
-		A890804A1EC94AD800DE0A78 /* JRSON.m in Sources */ = {isa = PBXBuildFile; fileRef = A89080421EC94AD800DE0A78 /* JRSON.m */; };
+		A890804A1EC94AD800DE0A78 /* JRSONUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A89080421EC94AD800DE0A78 /* JRSONUtil.m */; };
 		A890804B1EC94AD800DE0A78 /* JRSONDefaultImplementations.m in Sources */ = {isa = PBXBuildFile; fileRef = A89080441EC94AD800DE0A78 /* JRSONDefaultImplementations.m */; };
 		A890804C1EC94AD800DE0A78 /* JRSONPropertyAnalyzing.m in Sources */ = {isa = PBXBuildFile; fileRef = A89080461EC94AD800DE0A78 /* JRSONPropertyAnalyzing.m */; };
 		A890804D1EC94AD800DE0A78 /* JRSONTransformerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A89080491EC94AD800DE0A78 /* JRSONTransformerManager.m */; };
@@ -24,7 +24,6 @@
 		A89080561EC950F200DE0A78 /* JRSONDateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = A89080551EC950F200DE0A78 /* JRSONDateTransformer.m */; };
 		A89080591EC9516300DE0A78 /* JRSONURLTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = A89080581EC9516300DE0A78 /* JRSONURLTransformer.m */; };
 		A890805C1EC951C400DE0A78 /* JRSONNumberTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = A890805B1EC951C400DE0A78 /* JRSONNumberTransformer.m */; };
-		BFE3B955AD94962191513CDD /* Pods_JRSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9332CEDF73994C5824FF6F8 /* Pods_JRSON.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,11 +60,12 @@
 		9548869C2390001CA006034C /* Pods-JRSON.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JRSON.release.xcconfig"; path = "Pods/Target Support Files/Pods-JRSON/Pods-JRSON.release.xcconfig"; sourceTree = "<group>"; };
 		A83C36571E913D0000A5D2DE /* Animal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animal.h; sourceTree = "<group>"; };
 		A83C36581E913D0000A5D2DE /* Animal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
+		A841A6AC1F3075A400CB4009 /* JRSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JRSON.h; sourceTree = "<group>"; };
 		A88B4EA11EBC855800EE599A /* test.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test.png; sourceTree = "<group>"; };
 		A890803C1EC94AB200DE0A78 /* JRSONDataTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSONDataTransformer.h; sourceTree = "<group>"; };
 		A890803D1EC94AB200DE0A78 /* JRSONDataTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSONDataTransformer.m; sourceTree = "<group>"; };
-		A89080411EC94AD800DE0A78 /* JRSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSON.h; sourceTree = "<group>"; };
-		A89080421EC94AD800DE0A78 /* JRSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSON.m; sourceTree = "<group>"; };
+		A89080411EC94AD800DE0A78 /* JRSONUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSONUtil.h; sourceTree = "<group>"; };
+		A89080421EC94AD800DE0A78 /* JRSONUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSONUtil.m; sourceTree = "<group>"; };
 		A89080431EC94AD800DE0A78 /* JRSONDefaultImplementations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSONDefaultImplementations.h; sourceTree = "<group>"; };
 		A89080441EC94AD800DE0A78 /* JRSONDefaultImplementations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRSONDefaultImplementations.m; sourceTree = "<group>"; };
 		A89080451EC94AD800DE0A78 /* JRSONPropertyAnalyzing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRSONPropertyAnalyzing.h; sourceTree = "<group>"; };
@@ -89,7 +89,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFE3B955AD94962191513CDD /* Pods_JRSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +156,7 @@
 		098BA29F1E0D12510068F7F6 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A841A6AC1F3075A400CB4009 /* JRSON.h */,
 				A89080401EC94AD800DE0A78 /* Base */,
 				A89080391EC94AB200DE0A78 /* Transformers */,
 				098BA2A31E0D12510068F7F6 /* resource */,
@@ -221,8 +221,8 @@
 		A89080401EC94AD800DE0A78 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				A89080411EC94AD800DE0A78 /* JRSON.h */,
-				A89080421EC94AD800DE0A78 /* JRSON.m */,
+				A89080411EC94AD800DE0A78 /* JRSONUtil.h */,
+				A89080421EC94AD800DE0A78 /* JRSONUtil.m */,
 				A89080431EC94AD800DE0A78 /* JRSONDefaultImplementations.h */,
 				A89080441EC94AD800DE0A78 /* JRSONDefaultImplementations.m */,
 				A89080451EC94AD800DE0A78 /* JRSONPropertyAnalyzing.h */,
@@ -241,12 +241,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 091DF2921E0BADDC00FA5D18 /* Build configuration list for PBXNativeTarget "JRSON" */;
 			buildPhases = (
-				7DAB5429A39FDC578A4F398A /* [CP] Check Pods Manifest.lock */,
 				091DF26C1E0BADDC00FA5D18 /* Sources */,
 				091DF26D1E0BADDC00FA5D18 /* Frameworks */,
 				091DF26E1E0BADDC00FA5D18 /* Resources */,
-				29782DE2CD2066F5C0843A6C /* [CP] Embed Pods Frameworks */,
-				8C5CC53CC1D6B915CECDF079 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -341,54 +338,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		29782DE2CD2066F5C0843A6C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JRSON/Pods-JRSON-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7DAB5429A39FDC578A4F398A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		8C5CC53CC1D6B915CECDF079 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JRSON/Pods-JRSON-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		091DF26C1E0BADDC00FA5D18 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -396,7 +345,7 @@
 			files = (
 				A890804B1EC94AD800DE0A78 /* JRSONDefaultImplementations.m in Sources */,
 				A890804C1EC94AD800DE0A78 /* JRSONPropertyAnalyzing.m in Sources */,
-				A890804A1EC94AD800DE0A78 /* JRSON.m in Sources */,
+				A890804A1EC94AD800DE0A78 /* JRSONUtil.m in Sources */,
 				091DF2781E0BADDC00FA5D18 /* AppDelegate.m in Sources */,
 				A89080531EC94FAB00DE0A78 /* JRSONStringTransformer.m in Sources */,
 				A890805C1EC951C400DE0A78 /* JRSONNumberTransformer.m in Sources */,
