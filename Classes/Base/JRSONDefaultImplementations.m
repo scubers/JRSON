@@ -57,8 +57,13 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
+@interface NSObject (JRSONCate)
 
-@implementation JRSNDefaultImp
+@end
+
+@implementation NSObject (JRSONCate)
+
+//@implementation JRSNDefaultImp
 
 + (NSArray<NSString *> *)jrsn_ignoreProperties {
     return nil;

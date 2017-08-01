@@ -10,7 +10,6 @@
 #import <objc/runtime.h>
 #import "JRSONDefaultImplementations.h"
 #import "JRSONTransformerManager.h"
-@import MethodCopyer;
 
 
 @interface JRSON ()
@@ -21,14 +20,14 @@
 
 + (void)load {
 
-    [MCMethodCopyer copyMethods:@[
-                                NSStringFromSelector(@selector(jrsn_jsonString)),
-                                NSStringFromSelector(@selector(jrsn_objectFromJSON:)),
-                                NSStringFromSelector(@selector(jrsn_copy)),
-                                ]
-                 fromProtocol:@protocol(JRSON)
-                    fromClass:[JRSNDefaultImp class]
-                      toClass:[NSObject class]];
+//    [MCMethodCopyer copyMethods:@[
+//                                NSStringFromSelector(@selector(jrsn_jsonString)),
+//                                NSStringFromSelector(@selector(jrsn_objectFromJSON:)),
+//                                NSStringFromSelector(@selector(jrsn_copy)),
+//                                ]
+//                 fromProtocol:@protocol(JRSON)
+//                    fromClass:[JRSNDefaultImp class]
+//                      toClass:[NSObject class]];
 }
 
 

@@ -32,9 +32,9 @@
 
 //////////////////////////////////////////////////////////////////////
 
-@interface JRSNDefaultImp : NSObject <JRSON>
-
-@end
+//@interface JRSNDefaultImp : NSObject <JRSON>
+//
+//@end
 
 
 

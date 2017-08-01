@@ -45,9 +45,9 @@ static id __instance;
     NSMutableArray *info = [NSMutableArray array];
 
     NSArray<NSString *> *ignoreProperties = nil;
-    if ([aClass respondsToClassMethod:@selector(jrsn_ignoreProperties)]) {
+//    if ([aClass respondsToClassMethod:@selector(jrsn_ignoreProperties)]) {
         ignoreProperties = [aClass jrsn_ignoreProperties];
-    }
+//    }
 
     JRSONPropertyInfo *propertyInfo = nil;
 
@@ -80,9 +80,9 @@ static id __instance;
         if ([propClass isSubclassOfClass:[NSArray class]]) {
             propertyInfo.type = JRSONPropertyTypeArray;
             Class clazz = nil;
-            if ([aClass respondsToClassMethod:@selector(jrsn_arrayPropertiesClassMap)]) {
-                clazz = [aClass jrsn_arrayPropertiesClassMap][name];
-            }
+//            if ([aClass respondsToClassMethod:@selector(jrsn_arrayPropertiesClassMap)]) {
+            clazz = [aClass jrsn_arrayPropertiesClassMap][name];
+//            }
             NSAssert(![clazz isSubclassOfClass:[NSArray class]],
                      @"[%@ %@] 不能反序列化数组中的数组",
                      NSStringFromClass(aClass),
@@ -96,9 +96,9 @@ static id __instance;
         else if ([propClass isSubclassOfClass:[NSDictionary class]]) {
             propertyInfo.type = JRSONPropertyTypeDictionary;
             Class clazz = nil;
-            if ([aClass respondsToClassMethod:@selector(jrsn_dictPropertiesClassMap)]) {
-                clazz = [aClass jrsn_dictPropertiesClassMap][name];
-            }
+//            if ([aClass respondsToClassMethod:@selector(jrsn_dictPropertiesClassMap)]) {
+            clazz = [aClass jrsn_dictPropertiesClassMap][name];
+//            }
 
             NSAssert(![clazz isSubclassOfClass:[NSArray class]],
                      @"[%@ %@] 不能反序列化数组中的数组",
